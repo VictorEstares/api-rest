@@ -75,8 +75,7 @@ class ProfesorSignupView(generics.GenericAPIView):
 
 class AdministrativoSignupView(generics.GenericAPIView):
     serializer_class = AdministrativoSignupSerializer
-    permission_classes = [permissions.IsAuthenticated&permissions.IsAdminUser]
-    authentication_classes = [authentication.TokenAuthentication,]
+    
 
     def post (self, request, *args, **kwargs):
             serializer=self.get_serializer(data=request.data)
