@@ -126,7 +126,7 @@ class CustomAuthToken(ObtainAuthToken):
 
 class AdministrativoOnlyView(generics.RetrieveAPIView):
     authentication_classes = [authentication.TokenAuthentication]
-    permission_classes=[permissions.IsAdminUser&permissions.IsAuthenticated]
+    permission_classes=[permissions.IsAuthenticated]
     serializer_class=UserSerializer
 
     def get_object(self):
@@ -134,7 +134,7 @@ class AdministrativoOnlyView(generics.RetrieveAPIView):
 
 class AlumnosOnlyView(generics.RetrieveAPIView):
     authentication_classes = [authentication.TokenAuthentication]
-    permission_classes=[is_Alumno&permissions.IsAuthenticated]
+    permission_classes=[permissions.IsAuthenticated]
     serializer_class=UserSerializer
 
     def get_object(self):
@@ -142,7 +142,7 @@ class AlumnosOnlyView(generics.RetrieveAPIView):
 
 class ProfesorOnlyView(generics.RetrieveAPIView):
     authentication_classes = [authentication.TokenAuthentication]
-    permission_classes=[is_Profesor&permissions.IsAuthenticated]
+    permission_classes=[permissions.IsAuthenticated]
     serializer_class=UserSerializer
 
     def get_object(self):
